@@ -30,6 +30,9 @@ int collatz(int num)
 
 int main()
 {
-    cout << collatz(3);
+    int num = 0;
+    cout << "Enter a number: ";
+    cin >> num;
+    cout << collatz(num);
     return 0;
 }
