@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -30,9 +31,26 @@ int collatz(int num)
 
 int main()
 {
+    // Establish and initiate variables
     int num = 0;
-    cout << "Enter a number: ";
-    cin >> num;
-    cout << collatz(num);
+    bool quit = false;
+    string usrInput = "";
+
+    // Loop to allow for repeated entries
+    while(quit == false){
+
+        // Take in input, perform Collatz conjecture
+        cout << "Enter a number: ";
+        cin >> num;
+        collatz(num);
+
+        cout << "Would you like to try another number? (y/n):" << endl;
+        cin >> usrInput;
+
+        if (usrInput == "n"){
+            quit = true;
+        }
+    }
+
     return 0;
 }
