@@ -10,6 +10,7 @@ int collatz(int num, int steps, int max)
         max = num;
     }
 
+    // Output Sequence Info
     cout << "Current number is: " << num << endl;
     if (num <= 0){
         cout << "Error, Input Number is not Positive" << endl;
