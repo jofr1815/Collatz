@@ -1,21 +1,20 @@
-#pragma once
-
 #include <string>
 
 struct Node
 {
     int num;
     Node* next;
+    bool headNode;
 };
 
 
 class CollatzTree{
     private:
-    Node* validInput();
 
     public:
     CollatzTree();
     ~CollatzTree();
-    traverseToOne();
-
-}
+    void traverseToOne(int num);
+    int basicCollatz(int num);
+    bool validInput(int num);
+};
