@@ -7,8 +7,10 @@ ToDo:
     -Range of values (ie add starting nodes from 25 to 100)
 3. Deconstructor
 4. Additional pointer for tree construction
-5. AddNode function
-6. basicCollatz error handling (overflow, negative values)
-7. Search function
+5. basicCollatz error handling (overflow, negative values)
+6. Search function
 
 Completed: 
+
+8/11/22
+1. Created addBranch function

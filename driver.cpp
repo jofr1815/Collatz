@@ -15,9 +15,8 @@ int main()
     cin >> input;
     
     // Check for valid input, and return one step of the collatz conjecture
-    if (Tree.validInput(input)){
-        int response = Tree.basicCollatz(input);
-        cout << response << endl;
-        Tree.traverseToOne(input);
-    }
+    /*if (Tree.validInput(input)){
+        Tree.addBranch(input);
+    }*/
+    Tree.addBranch(input);
 }

@@ -6,12 +6,13 @@ using namespace std;
 
 CollatzTree::CollatzTree()
 {
-    
+    root = new Node;
+    root->key = 1;
 }
 
 CollatzTree::~CollatzTree()
 {
-
+    delete root;
 }
 
 void CollatzTree::traverseToOne(int num)
@@ -60,8 +61,8 @@ int CollatzTree::basicCollatz(int num)
 bool CollatzTree::validInput(int num)
 {
     // Checks if input is less than or equal to 0
-    if (num <= 0){
-        cout << "Error, the collatz conjecture only applies to non-negative numbers" << endl;
+    if (num <= 1){
+        cout << "Error, the collatz conjecture only applies to intergers greater than 0" << endl;
         return false;
     }
     // Checks if overflow will occur
@@ -71,4 +72,33 @@ bool CollatzTree::validInput(int num)
     }
 
     return true;
+}
+
+void CollatzTree::addBranch(int num){
+    // Warning: Development in progress, creates new branch independant of all others, only connects to root node
+
+    // Validate input number
+    if(!validInput(num)){
+        return;
+    }
+    // Create new head node, output value
+    Node* leaf = new Node;
+    leaf->key = num;
+    cout << "Leaf node value: " << leaf->key << endl;
+
+    // Create currNode pointer, set to head
+    Node* currNode = leaf;
+    
+    // Build branch down to root
+    while(currNode->key != 2){
+        Node* newNode = new Node;
+        newNode->key = basicCollatz(currNode->key);
+        currNode = newNode;
+        cout << "CurrNode key: " << currNode->key << endl;
+    }
+
+    // Connect new branch to root
+    currNode->next = root;
+
+    return;
 }
