@@ -1,0 +1,14 @@
+ToDo:
+
+1. Root node
+2. Constructor
+    -Only root node
+    -One initial node
+    -Range of values (ie add starting nodes from 25 to 100)
+3. Deconstructor
+4. Additional pointer for tree construction
+5. AddNode function
+6. basicCollatz error handling (overflow, negative values)
+7. Search function
+
+Completed: 
