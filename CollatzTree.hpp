@@ -2,8 +2,8 @@
 
 struct Node
 {
-    int num;
-    Node* next;
+    int key = 1;
+    Node* next = nullptr;
     bool headNode;
 };
 

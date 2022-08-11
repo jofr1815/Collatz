@@ -16,6 +16,19 @@ CollatzTree::~CollatzTree()
 
 void CollatzTree::traverseToOne(int num)
 {
+    Node* head = new Node;
+    cout << head->key << endl;
+    head->key = num;
+
+    Node* currNode = head;
+    while (currNode->key != 1){
+        Node* newNode = new Node;
+        newNode->key = basicCollatz(currNode->key);
+        currNode->next = newNode;
+        currNode = newNode;
+        cout << "CurrNode Key: " << currNode->key << endl;
+    }
+    cout << "Reached One. Collatz Confirmed for " << head->key << endl;
 
 }
 

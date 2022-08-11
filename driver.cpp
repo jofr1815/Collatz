@@ -18,5 +18,6 @@ int main()
     if (Tree.validInput(input)){
         int response = Tree.basicCollatz(input);
         cout << response << endl;
+        Tree.traverseToOne(input);
     }
 }
