@@ -21,15 +21,32 @@ void CollatzTree::traverseToOne(int num)
     head->key = num;
 
     Node* currNode = head;
+
+    // Build doubly linked list of nodes, output each key
     while (currNode->key != 1){
+        // Create new node
         Node* newNode = new Node;
+        // Set newNode key
         newNode->key = basicCollatz(currNode->key);
+        // Connect newNode to the pervious node
         currNode->next = newNode;
+        newNode->prev = currNode;
+        // Set Currnode to newNode
         currNode = newNode;
+        // Output currNode key
         cout << "CurrNode Key: " << currNode->key << endl;
     }
     cout << "Reached One. Collatz Confirmed for " << head->key << endl;
-
+    cout << "Begin reversing up list to input number" << endl;
+    cout << "CurrNode key: " << currNode->key << endl;
+    while(currNode != head){
+        // set currNode to previous node
+        currNode = currNode->prev;
+        // Output currNode key
+        cout << "CurrNode key: " << currNode->key << endl;
+    }
+    cout << "Successed, traversed back to initial value of " << currNode->key << " from root node 1" << endl;
+    return;
 }
 
 int CollatzTree::basicCollatz(int num)

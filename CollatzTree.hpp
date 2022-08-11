@@ -4,6 +4,7 @@ struct Node
 {
     int key = 1;
     Node* next = nullptr;
+    Node* prev = nullptr;
     bool headNode;
 };
 
